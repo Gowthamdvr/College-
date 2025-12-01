@@ -1,11 +1,35 @@
-<div align="center">
+# Gowtham Hospital App
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+## Backend Setup (Node.js + MongoDB)
 
-  <h1>Built with AI Studio</h2>
+This project includes a backend server located in the `server/` directory. By default, the frontend runs in "Mock Mode" using browser local storage.
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+To switch to the real backend:
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+1.  **Prerequisites**:
+    *   Node.js installed
+    *   MongoDB installed and running locally on default port 27017
 
-</div>
+2.  **Install Dependencies**:
+    Navigate to the project root and install the necessary backend packages:
+    ```bash
+    npm install express mongoose cors jsonwebtoken bcryptjs
+    ```
+
+3.  **Run the Server**:
+    ```bash
+    node server/server.js
+    ```
+    The server will start on `http://localhost:5000`.
+
+4.  **Connect Frontend**:
+    In `services/mockDatabase.ts`, change the export to use the API implementation:
+    ```typescript
+    // import { apiDatabase } from './api';
+    // export const db = apiDatabase; 
+    ```
+    (Note: You will need to import `apiDatabase` from `./api.ts`)
+
+## Frontend Development
+
+The frontend is built with React.
